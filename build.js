@@ -2,13 +2,25 @@
 const fs = require('fs');
 const OUT = 'docs', SRC = 'src';
 const layout = fs.readFileSync(`${SRC}/layout.html`, 'utf8');
+
 const concerts = JSON.parse(fs.readFileSync('data/concerts.json', 'utf8'))
   .sort((a, b) => a.date.localeCompare(b.date));
+
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 const fmt = d => new Date(d + 'T12:00:00').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
-const list = concerts.map(c =>
-  `<li data-date="${c.date}"><time datetime="${c.date}">${fmt(c.date)}</time>` +
-  `<span class="where"><strong>${esc(c.ville)}</strong> ${esc(c.lieu)}</span></li>`).join('\n');
+
+const today = new Date().toISOString().split('T')[0];
+
+const list = concerts.map((c, index) => {
+  const isPast = c.date < today;
+  // On applique l'inversion visuelle à toute la liste pour un tri décroissant global
+  const flexOrder = 1000 - index;
+  const pastClass = isPast ? ' class="past"' : '';
+  
+  return `<li style="order: ${flexOrder}" data-date="${c.date}"${pastClass}><time datetime="${c.date}">${fmt(c.date)}</time>` +
+  `<span class="where"><strong>${esc(c.ville)}</strong> ${esc(c.lieu)}</span></li>`;
+}).join('\n');
+
 const json = JSON.stringify(concerts).replace(/</g, '\\u003c');
 
 fs.rmSync(OUT, { recursive: true, force: true });

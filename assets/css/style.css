@@ -63,7 +63,7 @@ p { max-width: 62ch; }
 .ics { display: block; margin-top: 1rem; font-size: .95rem; }
 
 /* Liste des dates */
-.shows { list-style: none; margin: 0; padding: 0; }
+.shows { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
 .shows li { display: grid; grid-template-columns: 1fr; gap: .1rem 1rem; padding: .9rem .5rem; border-bottom: 2px solid var(--ink); }
 .shows time { font-weight: 600; }
 .shows .where strong { margin-right: .4rem; }
