@@ -78,6 +78,14 @@ p { max-width: 62ch; }
 .photo figcaption { font-size: .9rem; margin-top: .5rem; }
 .merch { list-style: none; padding: 0; margin: 0 0 1.5rem; font: clamp(1.3rem, 4vw, 2rem)/1.5 var(--head); }
 
+/* Style propre pour le Shop */
+.merch-list { list-style: none; padding: 0; margin: 0 0 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.merch-list li { display: flex; align-items: center; justify-content: space-between; gap: 1rem; border-bottom: 2px solid var(--ink); padding-bottom: 1rem; }
+.merch-title { font: 1.3rem var(--head); display: block; }
+.merch-desc { font-size: 0.95rem; opacity: 0.8; display: block; }
+.merch-images { display: flex; flex-direction: column; gap: 1.5rem; align-items: center; }
+.merch-note { font-size: 0.95rem; margin-top: 1.5rem; }
+
 /* Formulaire */
 form label { display: block; font-weight: 600; margin: 1rem 0 .3rem; }
 form input, form textarea { width: 100%; font: inherit; padding: .7rem; background: var(--white); border: 3px solid var(--ink); border-radius: 0; }

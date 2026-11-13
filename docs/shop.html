@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Merchandising – Ziard Breakers</title>
+<title>Shop – Ziard Breakers</title>
 <meta name="description" content="T-shirts, stickers, badges et briquets Ziard Breakers.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=Rubik+Mono+One&display=swap">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="page-merchandising">
+<body class="page-shop">
 <header class="site-header">
   <a class="logo" href="./">Ziard Breakers</a>
   <button class="burger" aria-expanded="false" aria-controls="menu">Menu</button>
@@ -18,7 +18,7 @@
     <a href="index.html">Accueil</a>
     <a href="biographie.html">Biographie</a>
     <a href="tour.html">Tour</a>
-    <a href="merchandising.html" aria-current="page">Merchandising</a>
+    <a href="merchandising.html">Shop</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
@@ -26,29 +26,38 @@
 
 <section class="wrap split">
   <div>
-    <h1>Merchandising</h1>
-    <ul class="merch">
+    <h1>Shop</h1>
+    <ul class="merch-list">
       <li>
-        <span>T-shirts</span>
+        <div class="merch-info">
+          <span class="merch-title">T-shirts</span>
+          <span class="merch-desc">Logo devant, loup au dos.</span>
+        </div>
         <a class="btn" href="mailto:ziardbreakers@gmail.com?subject=Commande%20T-shirt">Commander</a>
       </li>
       <li>
-        <span>Stickers</span>
+        <div class="merch-info">
+          <span class="merch-title">Stickers</span>
+          <span class="merch-desc">Vinyle haute qualité.</span>
+        </div>
         <a class="btn" href="mailto:ziardbreakers@gmail.com?subject=Commande%20Stickers">Commander</a>
       </li>
       <li>
-        <span>Badges et briquets</span>
+        <div class="merch-info">
+          <span class="merch-title">Badges et briquets</span>
+          <span class="merch-desc">Pack collector du groupe.</span>
+        </div>
         <a class="btn" href="mailto:ziardbreakers@gmail.com?subject=Commande%20Badges%20et%20briquets">Commander</a>
       </li>
     </ul>
-    <p>Chaque bouton ouvre un e-mail prêt à envoyer. Tu peux aussi nous écrire depuis la <a href="contact.html">page contact</a>.</p>
+    <p class="merch-note">Chaque bouton ouvre un e-mail prêt à envoyer. Tu peux aussi nous écrire depuis la <a href="contact.html">page contact</a>.</p>
   </div>
-  <div>
+  <div class="merch-images">
     <figure class="photo color">
       <img src="assets/images/t_shirt.png" alt="T-shirt noir Ziard Breakers, logo devant et loup violet au dos" loading="lazy">
       <figcaption>Le T-shirt : logo devant, loup au dos.</figcaption>
     </figure>
-    <img class="logo-img" style="margin-top:1.5rem" src="assets/images/logo_ziard.webp" alt="Logo Ziard Breakers" loading="lazy">
+    <img class="logo-img" src="assets/images/logo_ziard.webp" alt="Logo Ziard Breakers" loading="lazy">
   </div>
 </section>
 </main>
