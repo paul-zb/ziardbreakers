@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact – Ziard Breakers</title>
+<meta name="description" content="Contacter Ziard Breakers pour un concert, une collaboration ou une commande de merch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=Rubik+Mono+One&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="page-contact">
+<header class="site-header">
+  <a class="logo" href="./">Ziard Breakers</a>
+  <button class="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+  <nav id="menu" class="nav" aria-label="Navigation principale">
+    <a href="index.html">Accueil</a>
+    <a href="biographie.html">Biographie</a>
+    <a href="tour.html">Tour</a>
+    <a href="merchandising.html">Merchandising</a>
+    <a href="contact.html" aria-current="page">Contact</a>
+  </nav>
+</header>
+<main>
+
+<section class="wrap split">
+  <div>
+    <h1>Contact</h1>
+    <p>Un concert à proposer, une question, une commande de merch ? Écris-nous.</p>
+    <p><a href="mailto:ziardbreakers@gmail.com">ziardbreakers@gmail.com</a></p>
+    <p><a href="https://linktr.ee/ziard_breakers">linktr.ee/ziard_breakers</a></p>
+  </div>
+  <form name="contact" method="POST" action="merci.html" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact">
+    <p class="trap"><label>Ne pas remplir <input name="bot-field"></label></p>
+    <label for="nom">Nom</label>
+    <input id="nom" name="nom" required autocomplete="name">
+    <label for="email">Adresse e-mail</label>
+    <input id="email" name="email" type="email" required autocomplete="email">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+    <button class="btn" type="submit">Envoyer le message</button>
+  </form>
+</section>
+
+</main>
+<footer class="site-footer">
+  <p>Ziard Breakers, Lille</p>
+  <p><a href="https://linktr.ee/ziard_breakers">Linktree</a> · <a href="mailto:ziardbreakers@gmail.com">ziardbreakers@gmail.com</a></p>
+</footer>
+<script id="concerts" type="application/json">[{"date":"2026-06-13","ville":"Lille","lieu":"Le Tatoué Bar","url":""},{"date":"2026-06-18","ville":"Lille","lieu":"Aéronef","url":""},{"date":"2026-06-21","ville":"Calais","lieu":"La Crypte","url":""},{"date":"2026-06-27","ville":"Lille","lieu":"Le Bidule","url":""},{"date":"2026-09-05","ville":"Lille","lieu":"High Voltage","url":""},{"date":"2026-09-06","ville":"Lille","lieu":"Le Pop Bar","url":""},{"date":"2026-09-13","ville":"Lille","lieu":"Les Sarrazins","url":""},{"date":"2026-10-10","ville":"Douvrin","lieu":"Festi'Plus","url":""},{"date":"2026-10-17","ville":"Bauvin","lieu":"O'Rendez Vous","url":""},{"date":"2026-11-14","ville":"Béthune","lieu":"Nautilus","url":""},{"date":"2026-11-21","ville":"La Bassée","lieu":"Skal Bar","url":""}]</script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

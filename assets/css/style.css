@@ -1,0 +1,91 @@
+:root {
+  --paper: #e4e5e7; --ink: #050505; --white: #f8f8f8; --violet: #7c3aed;
+  --head: "Rubik Mono One", Impact, "Arial Black", sans-serif;
+  --body: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.05rem/1.65 var(--body); }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--violet); outline-offset: 3px; }
+h1, h2 { font-family: var(--head); font-weight: 400; line-height: 1.05; margin: 0 0 1rem; }
+h1 { font-size: clamp(1.8rem, 6vw, 3rem); }
+h2 { font-size: clamp(1.1rem, 3vw, 1.5rem); }
+
+/* En-tête et navigation */
+.site-header { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between;
+  padding: .7rem 1.25rem; background: var(--ink); color: var(--white); }
+.logo { font: 1rem var(--head); text-decoration: none; }
+.nav { display: flex; gap: .4rem; }
+.nav a { text-decoration: none; padding: .3rem .7rem; }
+.nav a:hover { text-decoration: underline; }
+.nav a[aria-current] { background: var(--violet); }
+.burger { display: none; font: inherit; color: inherit; background: none; border: 2px solid var(--white); padding: .3rem .9rem; cursor: pointer; }
+@media (max-width: 760px) {
+  .burger { display: block; }
+  .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0;
+    background: var(--ink); padding: .5rem 1.25rem 1rem; }
+  .nav.open { display: flex; }
+  .nav a { padding: .8rem .5rem; font-size: 1.15rem; }
+}
+
+/* Accueil */
+.hero { position: relative; min-height: 55svh; display: flex; align-items: center; color: var(--white); background: var(--ink); overflow: hidden; }
+.hero::before { content: ""; position: absolute; inset: 0; background: url(../images/arnf.jpg) center / cover; }
+.hero::after { content: ""; position: absolute; inset: 0; background: rgba(5, 5, 5, 0.65); }
+.hero-inner { position: relative; z-index: 1; width: 100%; max-width: 1100px; margin: 0 auto; padding: 2rem 1.25rem; text-align: center; }
+.hero h1 { font-size: clamp(2.4rem, 11vw, 7.5rem); line-height: .95; margin: 0; overflow-wrap: anywhere; }
+.tagline { font-size: clamp(1.05rem, 2.5vw, 1.4rem); margin: 1rem auto 0; max-width: 34ch; }
+
+.logo-img {
+  max-width: 180px; /* Vous pouvez augmenter ou diminuer cette valeur (ex: 100px, 150px) pour l'ajuster pile à la bonne hauteur */
+  margin: 0 auto 1.5rem; /* Centre le logo et laisse un espace avec le titre en dessous */
+  display: block;
+  border-radius: 3px;
+}
+
+/* Mise en page commune */
+.wrap { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.25rem 3.5rem; }
+.split { display: grid; gap: 2.5rem; grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 860px) { .split { grid-template-columns: 1fr 1fr; } .tour { grid-template-columns: 1fr 1.5fr; } }
+p { max-width: 62ch; }
+.btn { display: inline-block; padding: .75rem 1.4rem; background: var(--ink); color: var(--white); font-weight: 600;
+  text-decoration: none; border: 3px solid var(--ink); cursor: pointer; font-family: inherit; font-size: 1rem; }
+.btn:hover { background: var(--violet); border-color: var(--violet); }
+.btn.light { background: var(--white); color: var(--ink); border-color: var(--white); }
+
+/* Prochain concert */
+.next-show { background: var(--violet); color: var(--white); padding: 1.75rem; }
+.next-show p { margin: .25rem 0; }
+.big-date { font: clamp(1.4rem, 4vw, 2rem)/1.1 var(--head); margin: .75rem 0 1rem !important; }
+.venue { font-size: 1.3rem; font-weight: 600; }
+.ics { display: block; margin-top: 1rem; font-size: .95rem; }
+
+/* Liste des dates */
+.shows { list-style: none; margin: 0; padding: 0; }
+.shows li { display: grid; grid-template-columns: 1fr; gap: .1rem 1rem; padding: .9rem .5rem; border-bottom: 2px solid var(--ink); }
+.shows time { font-weight: 600; }
+.shows .where strong { margin-right: .4rem; }
+.shows .ics { margin: 0; }
+.shows li.past { opacity: .45; }
+.shows li.next { background: var(--ink); color: var(--white); }
+@media (min-width: 560px) { .shows li { grid-template-columns: 12rem 1fr auto; align-items: baseline; } }
+
+/* Photos et merch */
+.photo { margin: 0; }
+.photo img { width: 100%; filter: grayscale(1) contrast(1.15); border: 3px solid var(--ink); }
+.photo figcaption { font-size: .9rem; margin-top: .5rem; }
+.merch { list-style: none; padding: 0; margin: 0 0 1.5rem; font: clamp(1.3rem, 4vw, 2rem)/1.5 var(--head); }
+
+/* Formulaire */
+form label { display: block; font-weight: 600; margin: 1rem 0 .3rem; }
+form input, form textarea { width: 100%; font: inherit; padding: .7rem; background: var(--white); border: 3px solid var(--ink); border-radius: 0; }
+form .btn { margin-top: 1.25rem; }
+.trap { position: absolute; left: -9999px; }
+
+/* Pied de page */
+.site-footer { background: var(--ink); color: var(--white); padding: 1.5rem 1.25rem; text-align: center; }
+.site-footer p { margin: .2rem auto; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

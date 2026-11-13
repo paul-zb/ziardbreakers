@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{fulltitle}}</title>
+<meta name="description" content="{{description}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=Rubik+Mono+One&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="page-{{page}}">
+<header class="site-header">
+  <a class="logo" href="./">Ziard Breakers</a>
+  <button class="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+  <nav id="menu" class="nav" aria-label="Navigation principale">
+    <a href="index.html">Accueil</a>
+    <a href="biographie.html">Biographie</a>
+    <a href="tour.html">Tour</a>
+    <a href="merchandising.html">Merchandising</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<main>
+{{content}}
+</main>
+<footer class="site-footer">
+  <p>Ziard Breakers, Lille</p>
+  <p><a href="https://linktr.ee/ziard_breakers">Linktree</a> · <a href="mailto:ziardbreakers@gmail.com">ziardbreakers@gmail.com</a></p>
+</footer>
+<script id="concerts" type="application/json">{{json}}</script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
