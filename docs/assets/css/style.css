@@ -97,3 +97,8 @@ form .btn { margin-top: 1.25rem; }
 .site-footer p { margin: .2rem auto; }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* ===== Lecteurs SoundCloud ===== */
+.listen .players { display: grid; gap: 1.25rem; max-width: 760px; margin: 0 auto 1.75rem; }
+.listen iframe { border: 3px solid var(--violet); background: var(--violet-deep); display: block; }
+@media (min-width: 860px) { .listen .players { grid-template-columns: 1fr 1fr; max-width: none; } }
