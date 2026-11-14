@@ -102,3 +102,14 @@ form .btn { margin-top: 1.25rem; }
 .listen .players { display: grid; gap: 1.25rem; max-width: 760px; margin: 0 auto 1.75rem; }
 .listen iframe { border: 3px solid var(--violet); background: var(--violet-deep); display: block; }
 @media (min-width: 860px) { .listen .players { grid-template-columns: 1fr 1fr; max-width: none; } }
+
+/* ===== On parle de nous ===== */
+.news-list { list-style: none; margin: 0 auto 1.75rem; padding: 0; display: grid; gap: 1.25rem; }
+@media (min-width: 860px) { .news-list { grid-template-columns: repeat(3, 1fr); } }
+.news-card { display: flex; flex-direction: column; gap: .5rem; height: 100%; padding: 1.25rem; text-decoration: none;
+  color: #fff; background: #2a1250; border: 3px solid var(--violet); }
+.news-card:hover { background: var(--violet); border-color: var(--violet-light); }
+.news-meta { font-size: .85rem; color: var(--violet-light); }
+.news-card:hover .news-meta { color: #fff; }
+.news-title { font: clamp(1rem, 2.4vw, 1.15rem)/1.25 var(--head); }
+.news-sum { font-size: .95rem; }
