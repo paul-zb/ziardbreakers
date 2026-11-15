@@ -6,9 +6,12 @@ const concerts = JSON.parse(fs.readFileSync('data/concerts.json', 'utf8'))
   .sort((a, b) => a.date.localeCompare(b.date));
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 const fmt = d => new Date(d + 'T12:00:00').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
-const list = concerts.map(c =>
+
+// Liste affichée : de la plus récente à la plus ancienne (de haut en bas)
+const list = [...concerts].reverse().map(c =>
   `<li data-date="${c.date}"><time datetime="${c.date}">${fmt(c.date)}</time>` +
   `<span class="where"><strong>${esc(c.ville)}</strong> ${esc(c.lieu)}</span></li>`).join('\n');
+// JSON laissé en ordre chronologique pour main.js
 const json = JSON.stringify(concerts).replace(/</g, '\\u003c');
 
 // Parutions presse : data/presse.json (les plus récentes d'abord)
