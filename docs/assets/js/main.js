@@ -41,11 +41,12 @@
   });
 
   // Liste complète : dates passées grisées, prochaine date repérée
-  let found = false;
-  $$('.shows li').forEach((li, i) => {
-    const c = concerts[i];
+  // Chaque ligne est associée à son concert par sa date, quel que soit l'ordre d'affichage
+  $$('.shows li').forEach(li => {
+    const c = concerts.find(x => x.date === li.dataset.date);
+    if (!c) return;
     if (day(c.date) < today) { li.classList.add('past'); return; }
-    if (!found) { li.classList.add('next'); found = true; }
+    if (c === next) li.classList.add('next');
     li.insertAdjacentHTML('beforeend', agenda(c));
   });
 })();
